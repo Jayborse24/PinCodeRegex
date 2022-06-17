@@ -1,0 +1,24 @@
+package com.bridgelabz.javafundamentals;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class PinCodeRegex {
+	
+	    public static void main(String[] args) {
+	        String pinCode = "^[0-9]{3}(\s)?[0-9]{3}$";
+	        Pattern pattern = Pattern.compile(pinCode);
+
+	        Scanner sc = new Scanner(System.in);
+	        System.out.println("Enter the PinCode of your Area : ");
+	        String input = sc.nextLine();
+
+	        sc.close();
+
+	        if (pattern.matcher(input).matches()) {
+	            System.out.println("Valid Pin Code");
+	        } else {
+	            System.out.println("Invalid Pin Code, Please Enter Valid One....");
+	        }
+	    }
+}
